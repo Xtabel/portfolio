@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Alatsi&display=swap');* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Alatsi', sans-serif;
+  }
+  
+  
+  .thread {
+    display: inline-block;
+    width: 1px;
+    height: 93px;
+    background: black;
+    border-radius: 5px;
+    position: relative;
+    top:-40px;
+    transform-origin: 0% 0;
+    animation: moveIt 2.5s ease-in-out infinite;
+  }
+  
+  .thread:after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: red;
+    border: 2px solid white;
+    top: 0px;
+    left: -3.5px;
+  }
+  
+  
+  .pendulum {
+     width: 160px;
+     color:#000;
+     text-align: center;
+     border: 1px solid #000;
+     background-color: #fff;
+      position: absolute;
+      bottom: -37px;
+      left: -77px;
+      font-size: 20px;
+      padding: 8px 20px;
+  }
+  .active{
+    background-color: #CC5F70;
+    color: #fff;
+  }
+  
+
+  @keyframes moveIt {
+    0%, 100% {
+      transform: rotate(15deg);
+    }
+    50% {
+      transform: rotate(-15deg);
+    }
+  }
+  
