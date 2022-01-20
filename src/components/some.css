@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Alatsi&family=Charmonman&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alatsi&display=swap');* 
+
 {
     margin: 0;
     padding: 0;
@@ -43,7 +45,9 @@
       left: -77px;
       font-size: 20px;
       padding: 8px 20px;
+      cursor: pointer;
   }
+ 
   .active{
     background-color: #CC5F70;
     color: #fff;
