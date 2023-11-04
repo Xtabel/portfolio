@@ -1,0 +1,353 @@
+ <div
+        style={{
+          backgroundColor: "#FDFAFA",
+          height: "fit-content",
+          display: "flex",
+          flexDirection: "column",
+          gap: "100px",
+          padding: "30px",
+        }}
+      >
+        {/* new section */}
+        <div style={{ display: "flex", height: "350px" }}>
+          <div
+            style={{
+              width: "80%",
+              height: "100%",
+              /*  backgroundColor:'red', */ textAlign: "left",
+              padding: "30px 0px",
+              zIndex: "1",
+              position: "relative",
+              marginRight: "-70px",
+            }}
+          >
+            <h4 style={{ marginBottom: "6px", color: "#CC5F70" }}>
+              Featured Project
+            </h4>
+            <h2 style={{ marginBottom: "20px" }}>WAEC Study Hub</h2>
+            <div
+              style={{
+                width: "100%",
+                // boxShadow: "0 10px 30px -15px #000",
+                boxShadow: "rgb(144 144 144) 0px 10px 30px -15px",
+
+                backgroundColor: "#CC5F70",
+                padding: "30px",
+                borderRadius: "5px",
+                marginBottom: "20px",
+              }}
+            >
+              <p style={{ fontStyle: "18px", color: "#fff" }}>
+                A gamified e-Study application that offers the official WAEC
+                study and test materials to equip students in West Africa for
+                the WASSCE/GCE exams.
+              </p>
+            </div>
+            <p style={{ fontStyle: "13px" }}>
+              <ul
+                style={{
+                  display: "flex",
+                  justifyContent: "start",
+                  gap: "10px",
+                  listStyle: "none",
+                }}
+              >
+                <li>React JS</li>
+                <li>Material UI</li>
+                <li>Redux Thunk</li>
+                <li>AI</li>
+                <li>Tailwind CSS</li>
+              </ul>
+            </p>
+          </div>
+
+          <div
+            style={{
+              width: "100%",
+              height: "100%",
+              boxShadow: " 0px 1px 4px 1px rgba(178, 178, 178, 0.25)",
+              borderRadius: "10px",
+              boxSizing: "border-box",
+              background: `linear-gradient(0deg, rgb(98 98 98 / 30%), rgb(0 0 0 / 30%)),url(${Project5})`,
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
+          ></div>
+        </div>
+        <div style={{ display: "flex", height: "350px" }}>
+          <div
+            style={{
+              width: "100%",
+              height: "100%",
+              // border: "1px solid red",
+              boxShadow: " 0px 1px 4px 1px rgba(178, 178, 178, 0.25)",
+              borderRadius: "10px",
+              // backgroundImage: `url(${Project1})`,
+              // background:`linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(255, 0, 150, 0.3)), url(${Project1})`,
+              // background:`linear-gradient(0deg, rgba(255, 0, 150, 0.3)), url(${Project1})`,
+              // background:`linear-gradient(0deg, rgb(227 192 212 / 30%), rgb(247 135 201 / 30%)) 0% 0% / cover no-repeat, url(${Project1})`,
+              background: `linear-gradient(0deg, rgb(98 98 98 / 30%), rgb(0 0 0 / 30%)) 0% 0% / cover no-repeat,url(${Project1})`,
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
+          ></div>
+          <div
+            style={{
+              width: "80%",
+              height: "100%",
+              /*  backgroundColor:'red', */ textAlign: "right",
+              padding: "30px 0px",
+              zIndex: "1",
+              position: "relative",
+              marginLeft: "-70px",
+            }}
+          >
+            <h4 style={{ marginBottom: "6px", color: "#CC5F70" }}>
+              Featured Project
+            </h4>
+            <h2 style={{ marginBottom: "20px" }}>NYSC SAED Website</h2>
+            <div
+              style={{
+                width: "100%",
+                // boxShadow: "0 10px 30px -15px #000",
+                boxShadow: "rgb(144 144 144) 0px 10px 30px -15px",
+
+                backgroundColor: "#CC5F70",
+                padding: "30px",
+                borderRadius: "5px",
+                marginBottom: "20px",
+              }}
+            >
+              <p style={{ fontStyle: "18px", color: "#fff" }}>
+                A web application that automates the process of the NYSC Skill
+                Acquisition and Entrepreneurship Department in Nigeria.
+              </p>
+            </div>
+            <p style={{ fontStyle: "13px" }}>
+              <ul
+                style={{
+                  display: "flex",
+                  justifyContent: "end",
+                  gap: "10px",
+                  listStyle: "none",
+                }}
+              >
+                <li>React JS</li>
+                <li>MUI</li>
+                <li>GSAP</li>
+                <li>SASS</li>
+                <li>Redux Saga</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+
+        {/* new section */}
+        <div style={{ display: "flex", height: "350px" }}>
+          <div
+            style={{
+              width: "80%",
+              height: "100%",
+              /*  backgroundColor:'red', */ textAlign: "left",
+              padding: "30px 0px",
+              zIndex: "1",
+              position: "relative",
+              marginRight: "-70px",
+            }}
+          >
+            <h4 style={{ marginBottom: "6px", color: "#CC5F70" }}>
+              Featured Project
+            </h4>
+            <h2 style={{ marginBottom: "20px" }}>JM Tech Website</h2>
+            <div
+              style={{
+                width: "100%",
+                // boxShadow: "0 10px 30px -15px #000",
+                boxShadow: "rgb(144 144 144) 0px 10px 30px -15px",
+
+                backgroundColor: "#CC5F70",
+                padding: "30px",
+                borderRadius: "5px",
+                marginBottom: "20px",
+              }}
+            >
+              <p style={{ fontStyle: "18px", color: "#fff" }}>
+                A web application that offers IT training to African youths in
+                partnership with Microsoft initiative.
+              </p>
+            </div>
+            <p style={{ fontStyle: "13px" }}>
+              <ul
+                style={{
+                  display: "flex",
+                  justifyContent: "start",
+                  gap: "10px",
+                  listStyle: "none",
+                }}
+              >
+                <li>React JS</li>
+                <li>Material UI</li>
+                <li>Styled Components</li>
+                <li>Context API</li>
+              </ul>
+            </p>
+          </div>
+
+          <div
+            style={{
+              width: "100%",
+              height: "100%",
+              // border: "1px solid red",
+              boxShadow: " 0px 1px 4px 1px rgba(178, 178, 178, 0.25)",
+
+              borderRadius: "10px",
+              // backgroundImage: `url(${Project2})`,
+              background: `linear-gradient(0deg, rgb(98 98 98 / 30%), rgb(0 0 0 / 30%)) 0% 0% / cover no-repeat,url(${Project2})`,
+
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              backgroundPosition: "bottom",
+            }}
+          ></div>
+        </div>
+
+        {/* new section */}
+        <div style={{ display: "flex", height: "350px" }}>
+          <div
+            style={{
+              width: "100%",
+              height: "100%",
+              boxShadow: " 0px 1px 4px 1px rgba(178, 178, 178, 0.25)",
+              borderRadius: "10px",
+              // backgroundImage: `url(${Project4})`,
+              background: `linear-gradient(0deg, rgb(98 98 98 / 30%), rgb(0 0 0 / 30%)) 0% 0% / cover no-repeat,url(${Project4})`,
+
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          ></div>
+          <div
+            style={{
+              width: "80%",
+              height: "100%",
+              /*  backgroundColor:'red', */ textAlign: "right",
+              padding: "30px 0px",
+              zIndex: "1",
+              position: "relative",
+              marginLeft: "-70px",
+            }}
+          >
+            <h4 style={{ marginBottom: "6px", color: "#CC5F70" }}>
+              Featured Project
+            </h4>
+            <h2 style={{ marginBottom: "20px" }}>
+              WAEC e-Registration Management Module
+            </h2>
+            <div
+              style={{
+                width: "100%",
+                boxShadow: "rgb(144 144 144) 0px 10px 30px -15px",
+                // boxShadow: "0 10px 30px -15px #000",
+
+                backgroundColor: "#CC5F70",
+                padding: "30px",
+                borderRadius: "5px",
+                marginBottom: "20px",
+              }}
+            >
+              <p style={{ fontStyle: "18px", color: "#fff" }}>
+                A management module for WAEC e-Registration admin management.
+                The web application handles all administrative operations
+                involved in the WASSCE examination in West Africa.
+              </p>
+            </div>
+            <p style={{ fontStyle: "13px" }}>
+              <ul
+                style={{
+                  display: "flex",
+                  justifyContent: "end",
+                  gap: "10px",
+                  listStyle: "none",
+                }}
+              >
+                <li>React JS</li>
+                <li>MUI</li>
+                <li>React Dnd</li>
+                <li>SASS</li>
+                <li>Redux Saga</li>
+                <li>Redux Persist</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+
+        {/* new section */}
+        <div style={{ display: "flex", height: "350px" }}>
+          <div
+            style={{
+              width: "80%",
+              height: "100%",
+              /*  backgroundColor:'red', */ textAlign: "left",
+              padding: "30px 0px",
+              zIndex: "1",
+              position: "relative",
+              marginRight: "-70px",
+            }}
+          >
+            <h4 style={{ marginBottom: "6px", color: "#CC5F70" }}>
+              Featured Project
+            </h4>
+            <h2 style={{ marginBottom: "20px" }}>Careplus HMO</h2>
+            <div
+              style={{
+                width: "100%",
+                // boxShadow: "0 10px 30px -15px #000",
+                boxShadow: "rgb(144 144 144) 0px 10px 30px -15px",
+
+                backgroundColor: "#CC5F70",
+                padding: "30px",
+                borderRadius: "5px",
+                marginBottom: "20px",
+              }}
+            >
+              <p style={{ fontStyle: "18px", color: "#fff" }}>
+                A multi-tenant HMO custom web and mobile solution providing the
+                best means of handling all HMO operations.
+              </p>
+            </div>
+            <p style={{ fontStyle: "13px" }}>
+              <ul
+                style={{
+                  display: "flex",
+                  justifyContent: "start",
+                  gap: "10px",
+                  listStyle: "none",
+                }}
+              >
+                <li>React JS</li>
+                <li>Material UI</li>
+                <li>SASS</li>
+                <li>Redux Saga</li>
+              </ul>
+            </p>
+          </div>
+
+          <div
+            style={{
+              width: "100%",
+              height: "100%",
+              boxShadow: " 0px 1px 4px 1px rgba(178, 178, 178, 0.25)",
+              borderRadius: "10px",
+              // backgroundImage: `url(${Project3})`,
+              background: `linear-gradient(0deg, rgb(98 98 98 / 30%), rgb(0 0 0 / 30%)) 0% 0% / cover no-repeat,url(${Project3})`,
+
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              // backgroundPosition:'bottom',
+            }}
+          ></div>
+        </div>
+
+        {/* Other Project */}
+      </div>
