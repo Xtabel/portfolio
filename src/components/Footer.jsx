@@ -104,8 +104,8 @@ const Footer = ({ refs }) => {
         >
           {" "}
           <div>
-            <Typography style={{ color: "#979797", fontWeight: 700 }}>
-              Designed and developed by Christabel Akpoguma (2021)
+            <Typography style={{ color: "#979797", fontWeight: 500 }}>
+            Copyright © Christabel Akpoguma (2021)
             </Typography>
           </div>
         </div>
