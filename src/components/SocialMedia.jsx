@@ -129,11 +129,11 @@ const SocialMedia = () => {
           </li>
           <li>
             <a
-              href="https://github.com/Xtabel"
+              href="https://medium.com/@christabelakpoguma"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Icon icon="akar-icons:instagram-fill" />
+              <Icon icon="iconoir:medium" />
             </a>
           </li>
         </ul>
