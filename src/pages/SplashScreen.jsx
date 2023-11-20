@@ -42,7 +42,7 @@ const SplashScreen = () => {
       <div
         className={`card ${bounceCount < 3 ? "ball-bouncing" : "ball-growing"}`}
       >
-        <div className={bounceCount < 3 ? "ball" : "ballgrow"}></div>
+        <div className={`${bounceCount < 3 ? "ball" : "ballgrow"}`}></div>
         <p
           style={{
             position: "absolute",

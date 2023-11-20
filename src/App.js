@@ -30,22 +30,7 @@ const useStyles = makeStyles((theme) => ({
   Container: {
     height: "100%",
     width: "100%",
-    // backgroundImage: `url(${homebg})`,
-    // backgroundSize: "cover",
-    // backgroundPosition: "center",
     padding: "0px 30px",
-    // display: "flex",
-    // justifyContent: "top",
-    // alignItems: "center",
-    // alignContent: "center",
-    // alignSelf: "center",
-    // flexDirection: "column",
-    // background:
-    // "url(http://www.chicagotribune.com/hive/images/video/play_icon_carousel.png)",
-    // backgroundRepeat: "no-repeat",
-    // position: "absolute",
-    // zIndex: 1,
-    // overflowX: "hidden",
     boxSizing: "border-box",
     [theme.breakpoints.down("xs")]: {
       padding: "0px 30px",
