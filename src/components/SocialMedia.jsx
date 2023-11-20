@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
       display: "flex",
       width: "100%",
       bottom: "0px",
-      zIndex: "10",
+      zIndex: "50",
       position: "fixed",
       backgroundColor: "#fff",
       right: 0,
@@ -120,7 +120,7 @@ const SocialMedia = () => {
           </li>
           <li>
             <a
-             href="mailto:christabelakpoguma@gmail.com"
+              href="mailto:christabelakpoguma@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
             >

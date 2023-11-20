@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
-import image from "../assets/image.gif";
 import image1 from "../assets/image1.gif";
 import Typist from "react-typist";
 import SocialMedia from "./SocialMedia";
@@ -9,6 +8,7 @@ import SocialMedia from "./SocialMedia";
 import "./some.css";
 import Menu from "./MenuIcon";
 import NavMenu from "./NavMenu";
+import { motion } from "framer-motion";
 
 const useStyles = makeStyles((theme) => ({
   containerBox: {
@@ -130,7 +130,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("xs")]: {
       width: "auto",
-      height: "300px",
+      height: "200px",
     },
   },
   heroSection: {
@@ -138,7 +138,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
     alignItems: "center",
     gap: 0,
-    padding: "0px 50px",
+    padding: "50px 50px",
     boxSizing: "border-box",
     [theme.breakpoints.down("sm")]: {
       /*   flexDirection:'column',
@@ -161,7 +161,7 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: "flex-end",
       padding: "0px",
       width: "100%",
-      overflowX: "hidden",
+      overflow: "hidden",
     },
   },
 }));
@@ -172,10 +172,14 @@ const Header = ({ handleClick }) => {
 
   const handleShowMenu = () => {
     setShowMenu(!showMenu);
+    if (showMenu) {
+      document.body.style = "overflow: auto";
+    } else document.body.style = "overflow: hidden";
   };
   const handleCloseMenu = (ref) => {
     setShowMenu(false);
     handleClick(ref);
+    document.body.style = "overflow: auto";
   };
   const viewUXPortfolioHandler = () => {
     window.open(
@@ -184,6 +188,49 @@ const Header = ({ handleClick }) => {
       "noopener,noreferrer"
     );
   };
+
+  const navLinks = [
+    {
+      name: "About",
+      ref: "aboutRef",
+    },
+    {
+      name: "Experience",
+      ref: "experienceRef",
+    },
+    {
+      name: "Projects",
+      ref: "projectsRef",
+    },
+    {
+      name: "Contact",
+      ref: "contactRef",
+    },
+  ];
+
+  const textVariants = {
+    initial: {
+      x: -500,
+      opacity: 0,
+    },
+    animate: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 1,
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const navVariants = {
+    visible: (i) => ({
+      opacity: 1,
+      x: 0,
+      transition: { delay: i * 0.3 },
+    }),
+    hidden: { opacity: 0 },
+  };
   return (
     <div
       style={{
@@ -191,54 +238,32 @@ const Header = ({ handleClick }) => {
         maxWidth: "1440px",
         margin: "auto",
         overflowX: "hidden",
+        height: "100%",
       }}
     >
       <div className={classes.containerBox}>
         <div className={classes.header}>
-          <div className={classes.navlink}>
-            <div>
-              <div className="thread">
-                <div
-                  onClick={() => handleClick("aboutRef")}
-                  className="pendulum active"
-                >
-                  About{" "}
+          <motion.div
+            className={classes.navlink}
+            variants={navVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {navLinks?.map((item, index) => (
+              <motion.div variants={navVariants} key={index} custom={index}>
+                <div className="thread">
+                  <div
+                    onClick={() => handleClick(item?.ref)}
+                    className={`pendulum ${
+                      item?.name === "About" && " active"
+                    }`}
+                  >
+                    {item?.name}
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div>
-              {" "}
-              <div className="thread">
-                <div
-                  onClick={() => handleClick("experienceRef")}
-                  className="pendulum"
-                >
-                  Experience
-                </div>
-              </div>
-            </div>
-            <div>
-              {" "}
-              <div className="thread">
-                <div
-                  onClick={() => handleClick("projectsRef")}
-                  className="pendulum"
-                >
-                  Projects
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="thread">
-                <div
-                  onClick={() => handleClick("contactRef")}
-                  className="pendulum"
-                >
-                  Contact
-                </div>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
 
         <div className={classes.menu}>
@@ -246,26 +271,35 @@ const Header = ({ handleClick }) => {
           <NavMenu showMenu={showMenu} closeMenu={handleCloseMenu} />
         </div>
         <div className={classes.heroSection}>
-          <div>
-            <h3 className={classes.textintro}>Hello, my name is -</h3>
+          <motion.div
+            variants={textVariants}
+            initial="initial"
+            animate="animate"
+          >
+            <motion.h3 variants={textVariants} className={classes.textintro}>
+              Hello, my name is -
+            </motion.h3>
             {/*     <Typist
               avgTypingDelay={80}
               startDelay={1000}
               cursor={{ hideWhenDone: true }}
             > */}
-            <span className={classes.myname}>
+            <motion.span variants={textVariants} className={classes.myname}>
               Christabel <Typist.Delay ms={500} /> Akpoguma
-            </span>
+            </motion.span>
             {/* </Typist> */}
 
-            <span className={classes.otherIntroDetails}>
-              <h4 className={classes.jobtype}>
+            <motion.span
+              variants={textVariants}
+              className={classes.otherIntroDetails}
+            >
+              <motion.h4 variants={textVariants} className={classes.jobtype}>
                 Product Designer and Creative Front-end Developer
-              </h4>
-              <p className={classes.jobtools}>
+              </motion.h4>
+              <motion.p variants={textVariants} className={classes.jobtools}>
                 I work with HTML, CSS , React JS, Adobe Photoshop, Adobe
                 Illustrator, Adobe Indesign and Figma.
-              </p>
+              </motion.p>
               <Button
                 variant="contained"
                 disableElevation
@@ -276,9 +310,14 @@ const Header = ({ handleClick }) => {
               >
                 View UX Portfolio
               </Button>
-            </span>
-          </div>
-          <div className={classes.primaryImageDiv}>
+            </motion.span>
+          </motion.div>
+          <motion.div
+            className={classes.primaryImageDiv}
+            initial={{ opacity: 0, x: 300 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, stiffness: 100 }}
+          >
             {" "}
             <img
               draggable={false}
@@ -286,7 +325,7 @@ const Header = ({ handleClick }) => {
               src={image1}
               alt="Creative"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
       <SocialMedia />

@@ -9,6 +9,7 @@ import ExperiencePage from "./pages/ExperiencePage";
 import ProjectsPage from "./pages/ProjectsPage";
 import Footer from "./components/Footer";
 import SplashScreen from "./pages/SplashScreen";
+import Cursor from "./components/Cursor";
 
 const theme = createTheme({
   palette: {
@@ -27,7 +28,7 @@ const theme = createTheme({
 
 const useStyles = makeStyles((theme) => ({
   Container: {
-    // height: "100%",
+    height: "100%",
     width: "100%",
     // backgroundImage: `url(${homebg})`,
     // backgroundSize: "cover",
@@ -44,14 +45,16 @@ const useStyles = makeStyles((theme) => ({
     // backgroundRepeat: "no-repeat",
     // position: "absolute",
     // zIndex: 1,
-    overflowX: "hidden",
+    // overflowX: "hidden",
     boxSizing: "border-box",
     [theme.breakpoints.down("xs")]: {
       padding: "0px 30px",
       alignItems: "left",
     },
   },
-  innerContainer: {},
+  innerContainer: {
+    height: "100%",
+  },
 }));
 
 function App() {
@@ -72,24 +75,35 @@ function App() {
 
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    setTimeout(()=>{
+    setTimeout(() => {
       setLoading(false);
-    },[6000])
+    }, [6000]);
   }, []);
   return (
     <ThemeProvider theme={theme}>
       {loading ? (
         <SplashScreen />
       ) : (
-        <div className="animationNowFades" style={{ height: "100vh" }}>
+        <div className="animationNowFades" style={{ height: "100%" }}>
           <CssBaseline />
+          <Cursor/>
           <div className={classes.Container}>
             <div className={classes.innerContainer}>
-              <HomePage ScrollIntoView={ScrollIntoView} />
-              <AboutPage refs={refs.aboutRef} />
-              <ExperiencePage refs={refs.experienceRef} />
-              <ProjectsPage refs={refs.projectsRef} />
-              {<Footer refs={refs.contactRef} />}
+              <section>
+                <HomePage ScrollIntoView={ScrollIntoView} />
+              </section>
+              <section>
+                <AboutPage refs={refs.aboutRef} />
+              </section>
+              <section>
+                <ExperiencePage refs={refs.experienceRef} />
+              </section>
+              <section>
+                <ProjectsPage refs={refs.projectsRef} />
+              </section>
+              <section>
+                <Footer refs={refs.contactRef} />
+              </section>
             </div>
           </div>
         </div>

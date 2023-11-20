@@ -4,7 +4,6 @@ import "../components/some.css";
 const SplashScreen = () => {
   const [bounceCount, setBounceCount] = useState(0);
   const [nameDisplay, setNameDisplay] = useState(false);
-  const [animationEnd, setAnimationEnd] = useState(false);
 
   // Function to handle ball bouncing and expansion
   const handleBallAnimation = () => {
@@ -28,7 +27,7 @@ const SplashScreen = () => {
 
     const nameDisplayTimeout = setTimeout(() => {
       setNameDisplay(true);
-    //   setAnimationEnd(true);
+      //   setAnimationEnd(true);
     }, 4500);
 
     return () => {

@@ -1,7 +1,7 @@
 import { Box } from "@material-ui/core";
 import React from "react";
-import { Link } from "react-router-dom"; // Import Link from React Router if you're using it
 import "./some.css";
+import { motion } from "framer-motion";
 
 const NavMenu = ({ showMenu, closeMenu }) => {
   const menuStyle = {
@@ -10,15 +10,22 @@ const NavMenu = ({ showMenu, closeMenu }) => {
     top: 0,
     left: 0,
     width: "100%",
-    height: "100%",
+    height: "100vh",
     background: "#CC5F70", // Your preferred background color
-    zIndex: 10,
+    zIndex: 50,
     textAlign: "center",
     paddingTop: "100px", // Adjust this value for spacing
   };
-
+  const variants = {
+    visible: { x: 0, transition: { duration: 0.25, type: "spring" } },
+    hidden: { x: 100 },
+  };
   return (
-    <div style={menuStyle}>
+    <motion.div
+      style={menuStyle}
+      animate={showMenu ? "visible" : "hidden"}
+      variants={variants}
+    >
       <Box className="my-link" onClick={() => closeMenu("aboutRef")}>
         About
       </Box>
@@ -31,7 +38,7 @@ const NavMenu = ({ showMenu, closeMenu }) => {
       <Box className="my-link" onClick={() => closeMenu("contactRef")}>
         Contact
       </Box>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,10 +1,10 @@
-import React from 'react'
-import Experience from '../components/Experience'
+import React from "react";
+import Experience from "../components/Experience";
 
 const ExperiencePage = (ref) => {
   return (
-    <Experience {...ref}/>
-  )
-}
+    <Experience {...ref} />
+  );
+};
 
-export default ExperiencePage
+export default ExperiencePage;

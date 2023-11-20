@@ -4,7 +4,7 @@ import "./some.css";
 
 const useStyles = makeStyles((theme) => ({
   footerContainer: {
-    padding: "70px 30px 30px 30px",
+    padding: "70px 30px 50px 30px",
     width: "100%",
     backgroundColor: "transparent",
     maxWidth: "1440px",
@@ -38,7 +38,7 @@ const Footer = ({ refs }) => {
     window.open(mailtoLink);
   };
   return (
-    <div ref={refs} className={classes.footerContainer}>
+    <div className={classes.footerContainer}>
       <div className={classes.footerInnerContainer}>
         <div
           style={{
@@ -66,6 +66,7 @@ const Footer = ({ refs }) => {
             gap: "100px",
             alignItems: "center",
           }}
+          ref={refs}
         >
           <div className={classes.innerContent}>
             I love learning new things and I’m currently open to work in any
@@ -97,7 +98,7 @@ const Footer = ({ refs }) => {
         </div>
         <div
           style={{
-            padding: "70px 20px 20px 20px",
+            padding: "70px 20px 50px 20px",
             display: "flex",
             justifyContent: "center",
           }}
@@ -105,7 +106,7 @@ const Footer = ({ refs }) => {
           {" "}
           <div>
             <Typography style={{ color: "#979797", fontWeight: 500 }}>
-            Copyright © Christabel Akpoguma (2021)
+              Copyright © Christabel Akpoguma (2021)
             </Typography>
           </div>
         </div>

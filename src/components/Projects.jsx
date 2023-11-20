@@ -1,5 +1,9 @@
-import { Box, Tooltip, makeStyles, useMediaQuery, useTheme } from "@material-ui/core";
-import React from "react";
+import {
+  Box,
+  makeStyles,
+  useMediaQuery,
+  useTheme,
+} from "@material-ui/core";
 import Project1 from "../assets/placeholderimg.png";
 import Project2 from "../assets/placeholderimg2.png";
 // import Project2 from "../assets/image5.png";
@@ -7,8 +11,13 @@ import Project3 from "../assets/placeholderimg3.png";
 import Project4 from "../assets/placeholderimg4.png";
 import Project5 from "../assets/placeholderimg5.png";
 import "./projectstyles.css";
-import MobileContent from "./Projects/MobileContent";
-import { Icon } from "@iconify/react";
+import {
+  useScroll,
+  useSpring,
+  motion,
+  useTransform,
+} from "framer-motion";
+import WorkPortfolio from "./Projects/WorkPortfolio";
 
 const MyProjects = [
   {
@@ -78,22 +87,31 @@ const MyProjects = [
 
 const useStyles = makeStyles((theme) => ({
   projectsSection: {
-    padding: "70px 30px 30px 30px",
+    padding: "70px 30px 50px 30px",
     width: "100%",
     backgroundColor: "transparent",
     maxWidth: "1440px",
     margin: "auto",
     borderBottom: "1px solid #1a1a1a",
+    position: "relative",
     [theme.breakpoints.down("xs")]: {
       padding: "30px 0px",
       margin: "30px 0px",
     },
   },
+  stickyProjectsTitleSection: {
+    position: "sticky",
+    top: 0,
+    zIndex: 99,
+    background: "#fff",
+    marginBottom: "50px",
+    padding: "30px 0px 0px 0px",
+  },
   projectsTitleSection: {
     display: "flex",
     justifyContent: "flex-end",
     alignSelf: "flex-end",
-    marginBottom: "50px",
+    marginBottom: "20px",
   },
   myProjectsSection: {
     backgroundColor: "#FDFAFA",
@@ -104,7 +122,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "30px",
     [theme.breakpoints.down("xs")]: {
       padding: "0px",
-      gap:"50px",
+      gap: "50px",
     },
   },
 
@@ -154,17 +172,21 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "10px",
     cursor: "pointer",
     transition: "transform 0.3s ease-in-out",
+    background: "none",
     [theme.breakpoints.only("md")]: {
       width: "100%",
       height: "100%",
-      objectFit: "fill",
+      objectFit: "cover",
+    },
+    [theme.breakpoints.only("lg")]: {
+      // background:'#fff',
     },
   },
-  linkBtn:{
-    cursor:'pointer',
-    '&:hover':{
-      color:'#CC5F70 !important',
-    }
+  linkBtn: {
+    cursor: "pointer",
+    "&:hover": {
+      color: "#CC5F70 !important",
+    },
   },
 }));
 
@@ -176,140 +198,52 @@ const Projects = ({ refs }) => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
+  const { scrollYProgress } = useScroll({
+    target: refs,
+    // offset: ["end end", "start start"],
+  });
+  const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
+  const background = useTransform(
+    scrollYProgress,
+    [0, 0.4, 0.6, 0.8, 1],
+    ["#40499d", "#016c34", "#ff0000", "#40499d", "#6cc56f"]
+  );
+
   return (
     <Box ref={refs} className={classes.projectsSection}>
-      <Box className={classes.projectsTitleSection}>
-        <Box
-          style={{
-            gap: "10px",
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
+      <Box className={classes.stickyProjectsTitleSection}>
+        <Box className={classes.projectsTitleSection}>
           <Box
             style={{
-              width: "70px",
-              height: "10px",
-              backgroundColor: "#CC5F70",
+              gap: "10px",
+              display: "flex",
+              alignItems: "center",
             }}
-          ></Box>
-          <h2 style={{ fontFamily: "Alatsi, sans-serif" }}>Projects</h2>
+          >
+            <Box
+              style={{
+                width: "70px",
+                height: "10px",
+                backgroundColor: "#CC5F70",
+              }}
+            ></Box>
+            <h2 style={{ fontFamily: "Alatsi, sans-serif" }}>Projects</h2>
+          </Box>
         </Box>
+        <motion.div
+          style={{ scaleX, transformOrigin: "right", background }}
+          className="myprogressBar"
+        ></motion.div>
       </Box>
 
       {/* Content goes here */}
 
-      <Box className={classes.myProjectsSection}>
-        {/* new section */}
-        {MyProjects?.map((item) => (
-          <div key={item?.id}>
-            {item?.id % 2 !== 0 ? (
-              <div key={item?.id} style={{ display: "flex", height: "350px" }}>
-                <div
-                  className={
-                    !mobileScreen
-                      ? classes.leftRectangularBlock
-                      : classes.displaySection
-                  }
-                >
-                  <h4 style={{ marginBottom: "6px", color: "#CC5F70" }}>
-                    Featured Project
-                  </h4>
-                  <h2 style={{ marginBottom: "20px" }}>{item?.name}</h2>
-                  <div className={classes.featuredProjectRectangle}>
-                    <p style={{ fontStyle: "18px", color: "#fff" }}>
-                      {item?.subTitle}
-                    </p>
-                  </div>
-                  <Box style={{ fontStyle: "13px" }}>
-                    <ul className={classes.listStyle}>
-                      {item?.technologies?.map((val, i) => {
-                        return <li key={i}>{val}</li>;
-                      })}
-                    </ul>
-                  </Box>
-                  <Box style={{padding:'20px 0px'}}>
-                  <Tooltip title="Visit site">
-                    <a href={item?.link} rel="noopener noreferrer" target="_blank">
-                  <Icon icon="quill:link-out" width={"30px"} height={"30px"} color='#212020' className={classes.linkBtn} />
-                    </a>
-                    </Tooltip>
-                  </Box>
-                </div>
-                <div
-                  className={
-                    !mobileScreen ? "image-container" : "image-container-mobile"
-                  }
-                  onClick={() => handleImageClick(item?.link)}
-                >
-                  {mobileScreen&&<MobileContent content={item}/>}
-                  <img
-                    src={item?.image}
-                    alt={`${item?.name}`}
-                    className={classes.projectImage}
-                  />
-                </div>
-              </div>
-            ) : (
-              <div key={item?.id} style={{ display: "flex", height: "350px" }}>
-                <div
-                  className={
-                    !mobileScreen ? "image-container" : "image-container-mobile"
-                  }
-                  onClick={() => handleImageClick(item?.link)}
-                >
-                    {mobileScreen&&<MobileContent content={item}/>}
-                  <img
-                    src={item?.image}
-                    alt={`${item?.name}`}
-                    className={classes.projectImage}
-                  />
-                </div>
-                <div
-                  className={
-                    !mobileScreen
-                      ? classes.rightRectangularBlock
-                      : classes.displaySection
-                  }
-                >
-                  <h4 style={{ marginBottom: "6px", color: "#CC5F70" }}>
-                    Featured Project
-                  </h4>
-                  <h2 style={{ marginBottom: "20px" }}>{item?.name}</h2>
-                  <div className={classes.featuredProjectRectangle}>
-                    <p style={{ fontStyle: "18px", color: "#fff" }}>
-                      {item?.subTitle}
-                    </p>
-                  </div>
-                  <Box style={{ fontStyle: "13px" }}>
-                    <Box
-                      style={{
-                        display: "flex",
-                        justifyContent: "end",
-                        gap: "10px",
-                        listStyle: "none",
-                        flexWrap: "wrap",
-                      }}
-                    >
-                      {item?.technologies?.map((item, i) => {
-                        return <li key={i}>{item}</li>;
-                      })}
-                    </Box>
-                  </Box>
-                  <Box style={{padding:'20px 0px'}}>
-                  <Tooltip title="Visit site" color="red">
-                   <a href={item?.link} rel="noopener noreferrer" target="_blank">
-                  <Icon icon="quill:link-out" width={"30px"} height={"30px"} color='#212020' className={classes.linkBtn} />
-                    </a>
-                   </Tooltip>
-                  </Box>
-                </div>
-              </div>
-            )}
-          </div>
-        ))}
-      </Box>
-
+      <WorkPortfolio
+        handleImageClick={handleImageClick}
+        mobileScreen={mobileScreen}
+        classes={classes}
+        MyProjects={MyProjects}
+      />
       {/* Content goes here */}
     </Box>
   );

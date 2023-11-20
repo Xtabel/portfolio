@@ -1,0 +1,61 @@
+import { Box, Icon, Tooltip } from "@material-ui/core";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import MobileContent from "./MobileContent";
+import FeaturedProjectRectangle from "./FeaturedProjectRectangle";
+
+const WorkPortfolio = ({
+  classes,
+  mobileScreen,
+  handleImageClick,
+  MyProjects,
+}) => {
+ /*  const ref = useRef();
+  const { scrollYProgress } = useScroll({ target: ref });
+  const y = useTransform(scrollYProgress, [0, 1], [-300, 300]);
+ */
+const WorkImage = ({item})=>{
+  return(
+    <div
+    className={
+      !mobileScreen ? "image-container" : "image-container-mobile"
+    }
+    onClick={() => handleImageClick(item?.link)}
+  >
+    {mobileScreen && <MobileContent content={item} />}
+    <img
+    src={item?.image}
+    alt={`${item?.name}`}
+    className={classes.projectImage}
+  />
+  </div>
+   
+  )
+}
+  return (
+    <Box className={classes.myProjectsSection}>
+      {/* new section */}
+      {MyProjects?.map((item) => (
+        <div key={item?.id}>
+            <div key={item?.id} style={{ display: "flex", height: "350px" }}>
+            {item?.id % 2 ===0 && <WorkImage item={item}/>}
+              <motion.div
+                // style={{ y }}
+                className={
+                  !mobileScreen
+                    ? (item.id%2 ===0 ?classes.leftRectangularBlock:classes.rightRectangularBlock)
+                    : classes.displaySection
+                }
+              >
+            
+                <FeaturedProjectRectangle item={item} classes={classes} /* ref={ref} *//>
+              </motion.div>
+                {item?.id % 2 !==0 && <WorkImage item={item}/>}
+            </div>
+        </div>
+      ))}
+    </Box>
+  );
+};
+
+export default WorkPortfolio;

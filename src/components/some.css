@@ -11,7 +11,6 @@ html, body{
   margin: 0;
     padding: 0;
     box-sizing: border-box;
-    min-height: 100vh;
 }
   
   ::-webkit-scrollbar {
@@ -77,20 +76,24 @@ html, body{
         animation: slide-in-from-top 1s ease-in-out forwards; */
   }
   .thread:hover{
-    animation: stop 1.5s ease-in-out;
+    animation-play-state: paused;
     transition: all 3s ease-out;
-    -webkit-animation: slide-in-from-top 1s ease-in-out forwards;
-        -moz-animation: slide-in-from-top 1s ease-in-out forwards;
-        -o-animation: slide-in-from-top 1s ease-in-out forwards;
-        animation: slide-in-from-top 1s ease-in-out forwards;
+    /* animation: stop 1.5s ease-in-out; */
+   
+    /* -webkit-animation: slide-in-from-top 1s ease-in-out forwards; */
+        /* -moz-animation: slide-in-from-top 1s ease-in-out forwards; */
+        /* -o-animation: slide-in-from-top 1s ease-in-out forwards; */
+        /* animation: slide-in-from-top 1s ease-in-out forwards; */
   }
   .img-thread:hover{
-    animation: stop 1.5s ease-in-out;
-    transition: all 3s ease-out;
-    -webkit-animation: slide-in-from-top 1s ease-in-out forwards;
-        -moz-animation: slide-in-from-top 1s ease-in-out forwards;
-        -o-animation: slide-in-from-top 1s ease-in-out forwards;
-        animation: slide-in-from-top 1s ease-in-out forwards;
+    animation-play-state: paused;
+        transition: all 3s ease-out;
+    /* animation: stop 1.5s ease-in-out; */
+
+    /* -webkit-animation: slide-in-from-top 1s ease-in-out forwards; */
+        /* -moz-animation: slide-in-from-top 1s ease-in-out forwards; */
+        /* -o-animation: slide-in-from-top 1s ease-in-out forwards; */
+        /* animation: slide-in-from-top 1s ease-in-out forwards; */
   }
   
   .img-thread:after {
@@ -128,7 +131,6 @@ html, body{
       cursor: pointer;
       transition: all 3s ease-out;
   }
-
   .pendulum-img {
     width: 200px;
     height: 250px;
@@ -147,6 +149,7 @@ html, body{
      cursor: pointer;
      transition: all 3s ease-out;
  }
+
  .pendulum-img:before{
   content: "";
   position: absolute;
@@ -269,6 +272,8 @@ html, body{
 .card-container {
   max-width: 100%;
   overflow: hidden;
+  box-sizing:border-box;
+  height:100vh;
 }
 
 .card {

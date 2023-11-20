@@ -1,0 +1,91 @@
+import React, { useEffect, useRef } from "react";
+import {
+  AnimatePresence,
+  motion,
+  useScroll,
+  useTransform,
+
+} from "framer-motion";
+import MobileContent from "./MobileContent";
+import FeaturedProjectRectangle from "./FeaturedProjectRectangle";
+
+const WorkPortfolio = ({
+  classes,
+  mobileScreen,
+  handleImageClick,
+  MyProjects,
+}) => {
+  // const refer = useRef();
+ 
+
+  const WorkImage = ({ item }) => {
+    return (
+      <motion.div
+        className={!mobileScreen ? "image-container" : "image-container-mobile"}
+        onClick={() => handleImageClick(item?.link)}
+      >
+        {mobileScreen && <MobileContent content={item} />}
+        <motion.img
+          src={item?.image}
+          alt={`${item?.name}`}
+          className={classes.projectImage}
+        />
+      </motion.div>
+    );
+  };
+
+
+  function useParallax(value, distance) {
+    return useTransform(value, [0, 1], [-distance, distance]);
+  }
+  const refer = useRef(null);
+  const { scrollYProgress } = useScroll({ target: refer });
+  const y = useParallax(scrollYProgress, 300);
+
+  return (
+    <AnimatePresence initial={false}>
+    <motion.div className={classes.myProjectsSection} >
+      {MyProjects?.map((item) => (
+        <motion.div
+        ref={refer}
+        key={item?.id}
+        // exit="exit"
+        // viewport={{once: true}}
+       /*  custom={item?.id}
+        whileInView='visible' */
+        // initial='hidden'
+        // variants={variants}
+        >
+          <motion.div
+            key={item?.id}
+            style={{ display: "flex", height: "350px", overflow: "hidden" }}
+            className="cardSection"
+          >
+            {item?.id % 2 === 0 && <WorkImage item={item} />}
+            <motion.div
+              className={
+                !mobileScreen
+                  ? item.id % 2 !== 0
+                    ? classes.leftRectangularBlock
+                    : classes.rightRectangularBlock
+                  : classes.displaySection
+              }
+            >
+              <motion.div style={{ y }}>
+                {" "}
+                {/* Wrapping card and image in a container */}
+                <FeaturedProjectRectangle item={item} classes={classes} />
+                {/* <WorkImage item={item} /> */}
+              </motion.div>
+            </motion.div>
+            {item?.id % 2 !== 0 && <WorkImage item={item} />}
+          </motion.div>
+        </motion.div>
+      ))}
+    </motion.div>
+    </AnimatePresence>
+
+  );
+};
+
+export default WorkPortfolio;
