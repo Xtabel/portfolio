@@ -103,19 +103,25 @@ const useStyles = makeStyles((theme) => ({
     alignSelf: "flex-start",
     [theme.breakpoints.down("sm")]: {
       display: "block",
-    borderRight: 'none',
+      borderRight: "none",
     },
   },
   tab: {
     backgroundColor: theme.palette.primary.main,
   },
-  ulList:{
-    width: "600px", marginLeft: "20px",
+  ulList: {
+    width: "600px",
+    marginLeft: "20px",
     [theme.breakpoints.down("sm")]: {
-     width:'100%',
-     marginLeft:'0px'
+      width: "100%",
+      marginLeft: "0px",
     },
-  }
+  },
+  listStyles: {
+    marginTop: "12px",
+    listStyle: "circle",
+    textAlign: "justify",
+  },
 }));
 
 export default function VerticalTabs() {
@@ -146,26 +152,23 @@ export default function VerticalTabs() {
         <TabPanel value={value} index={0}>
           <h3>Front-End Engineer and Product Designer</h3>
           <h4 style={{ fontWeight: "500" }}>April 2021 - Present</h4>
-          <ul
-            className={classes.ulList}
-          >
-            <li
-              style={{
-                marginTop: "12px",
-                listStyle: "circle",
-                textAlign: "justify",
-              }}
-            >
+          <ul className={classes.ulList}>
+            <li className={classes.listStyles}>
+              Led the product design team and worked as a front-end engineer to
+              develop an e-Study application to serve students preparing for the
+              WASSCE examinations in West Africa.
+            </li>
+            <li className={classes.listStyles}>
               Developed Admin portal for the NYSC SAED Headquarters Department
               using React JS and Material UI, and consumed API for the portal.
               Used React- Redux to manage the state of the application.
             </li>
-            <li style={{ marginTop: "12px", listStyle: "circle" }}>
+            <li className={classes.listStyles}>
               Designed and developed a website for a skilling initiative with{" "}
               PayStack Integration in partnership with Microsoft which served
               more than 300 applicants.
             </li>
-            <li style={{ marginTop: "12px", listStyle: "circle" }}>
+            <li className={classes.listStyles}>
               Worked in a diverse agile team of software developers, designers
               and software analysts on delivering a digital solution for an HMO
               client that serves over 2000 users.
@@ -176,19 +179,19 @@ export default function VerticalTabs() {
           <h3>Product Designer & Graphics Designer</h3>
           <h4 style={{ fontWeight: "500" }}>December 2020- March 2021 </h4>
           <ul className={classes.ulList}>
-            <li
-              style={{
-                marginTop: "12px",
-                listStyle: "circle",
-                textAlign: "justify",
-              }}
-            >
-              Received commendations and recommendations for creating brilliant
-              designs for social media marketing.
+            <li className={classes.listStyles}>
+              Recognized for delivering impactful designs tailored for social
+              media marketing campaigns, receiving commendations and
+              recommendations for creating visually compelling assets that
+              enhanced brand engagement and user interaction.
             </li>
-            <li style={{ marginTop: "12px", listStyle: "circle" }}>
-              Worked as a lead content creator and engaged with a team of
-              digital marketers in advertising products to the target market.
+            <li className={classes.listStyles}>
+              Led content creation initiatives, collaborating closely with a
+              team of digital marketers to strategically advertise products to
+              our target market. This involved not only creating compelling
+              visuals but also ensuring seamless integration and functionality
+              across various digital platforms, fostering an intuitive user
+              experience.
             </li>
           </ul>
         </TabPanel>
@@ -203,13 +206,19 @@ export default function VerticalTabs() {
                 textAlign: "justify",
               }}
             >
-              Created Monthly Email Templates
+              Developed and designed monthly email templates, ensuring
+              consistent and visually appealing communication with clients and
+              stakeholders.
             </li>
-            <li style={{ marginTop: "12px", listStyle: "circle" }}>
-              Created Website Templates
+            <li className={classes.listStyles}>
+              Designed and crafted website templates, contributing to the
+              enhancement of the company's online platform, focusing on
+              user-friendly interfaces and engaging user experiences.
             </li>
-            <li style={{ marginTop: "12px", listStyle: "circle" }}>
-              Created Posters for company advertisement
+            <li className={classes.listStyles}>
+              Produced impactful posters for company advertisements, employing
+              strategic visual elements to effectively promote products and
+              services.
             </li>
           </ul>
         </TabPanel>
