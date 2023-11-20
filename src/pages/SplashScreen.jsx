@@ -5,7 +5,7 @@ const SplashScreen = () => {
   const [bounceCount, setBounceCount] = useState(0);
   const [nameDisplay, setNameDisplay] = useState(false);
 
-  // Function to handle ball bouncing and expansion
+  /* // Function to handle ball bouncing and expansion
   const handleBallAnimation = () => {
     // if (bounceCount < 3) {
     setBounceCount(bounceCount + 1);
@@ -17,7 +17,7 @@ const SplashScreen = () => {
     // Change the background color of .ball-bouncing
     const ballBouncing = document.querySelector(".ball-bouncing");
     ballBouncing.style.backgroundColor = "#CC5F70";
-  };
+  }; */
   //   };
 
   useEffect(() => {
