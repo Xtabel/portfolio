@@ -1,0 +1,58 @@
+.aboutDivTitle {
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+    margin-bottom: 50px;
+
+    .aboutText {
+        gap: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    .aboutTextRibbon {
+        width: 70px;
+        height: 10px;
+        background-color: #CC5F70;
+    }
+}
+
+
+.imageMobileDiv {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 30px 0px;
+}
+
+.imageMobile {
+    background-image: url('../assets/profile3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.imageMobile::before,
+.imageMobile::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+}
+
+.imageMobile::before {
+    top: 0;
+    left: 0;
+    border-width: 50px 50px 50px 50px;
+    border-color: #CC5F70 transparent transparent #CC5F70;
+    color: #fff;
+}
+
+.imageMobile::after {
+    bottom: 0;
+    right: 0;
+    border-width: 50px 50px 50px 50px;
+    border-color: transparent #CC5F70 #CC5F70 transparent;
+}

@@ -1,12 +1,6 @@
-import {
-  Box,
-  makeStyles,
-  useMediaQuery,
-  useTheme,
-} from "@material-ui/core";
+
 import Project1 from "../assets/placeholderimg.png";
 import Project2 from "../assets/placeholderimg2.png";
-// import Project2 from "../assets/image5.png";
 import Project3 from "../assets/placeholderimg3.png";
 import Project4 from "../assets/placeholderimg4.png";
 import Project5 from "../assets/placeholderimg5.png";
@@ -18,6 +12,8 @@ import {
   useTransform,
 } from "framer-motion";
 import WorkPortfolio from "./Projects/WorkPortfolio";
+import { Box, styled, useMediaQuery, useTheme } from "@mui/material";
+import { useState } from "react";
 
 const MyProjects = [
   {
@@ -33,7 +29,8 @@ const MyProjects = [
       "Tailwind CSS",
     ],
     image: Project5,
-    link: "https://estudyapp.azurewebsites.net/",
+    // link: "https://estudyapp.azurewebsites.net/",
+    // link: null,
   },
   {
     id: 2,
@@ -72,7 +69,8 @@ const MyProjects = [
       "Redux Persist",
     ],
     image: Project4,
-    link: "https://waece-regmgtmodule.azurewebsites.net/",
+    // link: "https://waece-regmgtmodule.azurewebsites.net/",
+    // link: "#/",
   },
   {
     id: 5,
@@ -85,113 +83,42 @@ const MyProjects = [
   },
 ];
 
-const useStyles = makeStyles((theme) => ({
-  projectsSection: {
-    padding: "70px 30px 50px 30px",
-    width: "100%",
-    backgroundColor: "transparent",
-    maxWidth: "1440px",
-    margin: "auto",
-    borderBottom: "1px solid #1a1a1a",
-    position: "relative",
-    [theme.breakpoints.down("xs")]: {
-      padding: "30px 0px",
-      margin: "30px 0px",
-    },
-  },
-  stickyProjectsTitleSection: {
-    position: "sticky",
-    top: 0,
-    zIndex: 99,
-    background: "#fff",
-    marginBottom: "50px",
-    padding: "30px 0px 0px 0px",
-  },
-  projectsTitleSection: {
-    display: "flex",
-    justifyContent: "flex-end",
-    alignSelf: "flex-end",
-    marginBottom: "20px",
-  },
-  myProjectsSection: {
-    backgroundColor: "#FDFAFA",
-    height: "fit-content",
-    display: "flex",
-    flexDirection: "column",
-    gap: "100px",
-    padding: "30px",
-    [theme.breakpoints.down("xs")]: {
-      padding: "0px",
-      gap: "50px",
-    },
-  },
-
-  leftRectangularBlock: {
-    width: "80%",
-    height: "100%",
-    textAlign: "left",
+const ProjectsSection = styled(Box)(({ theme }) => ({
+  padding: "70px 30px 50px 30px",
+  width: "100%",
+  backgroundColor: "transparent",
+  maxWidth: "1440px",
+  margin: "auto",
+  borderBottom: "1px solid #1a1a1a",
+  position: "relative",
+  [theme.breakpoints.down("md")]: {
     padding: "30px 0px",
-    zIndex: "3",
-    position: "relative",
-    marginRight: "-70px",
-  },
-  displaySection: {
-    display: "none",
-    height: 0,
-  },
-  rightRectangularBlock: {
-    width: "80%",
-    height: "100%",
-    /*  backgroundColor:'red', */ textAlign: "right",
-    padding: "30px 0px",
-    zIndex: "3",
-    position: "relative",
-    marginLeft: "-70px",
-  },
-  featuredProjectRectangle: {
-    width: "100%",
-    boxShadow: "rgb(144 144 144) 0px 10px 30px -15px",
-    backgroundColor: "#CC5F70",
-    padding: "30px",
-    borderRadius: "5px",
-    marginBottom: "20px",
-  },
-  listStyle: {
-    display: "flex",
-    justifyContent: "start",
-    gap: "10px",
-    listStyle: "none",
-    flexWrap: "wrap",
-  },
+    margin: "30px 0px",
 
-  projectImage: {
-    width: "100%",
-    height: "100%",
-    objectFit: "cover",
-    boxShadow: "0px 1px 4px 1px rgba(178, 178, 178, 0.25)",
-    borderRadius: "10px",
-    cursor: "pointer",
-    transition: "transform 0.3s ease-in-out",
-    background: "none",
-    [theme.breakpoints.only("md")]: {
-      width: "100%",
-      height: "100%",
-      objectFit: "cover",
-    },
-    [theme.breakpoints.only("lg")]: {
-      // background:'#fff',
-    },
-  },
-  linkBtn: {
-    cursor: "pointer",
-    "&:hover": {
-      color: "#CC5F70 !important",
-    },
-  },
+  }
 }));
 
+const ProjectsTitleSection = styled(Box)(({ theme }) => ({
+  display: "flex",
+  justifyContent: "flex-end",
+  alignSelf: "flex-end",
+  marginBottom: "20px",
+}));
 const Projects = ({ refs }) => {
-  const classes = useStyles();
+  //   const classes = useStyles();
+  const [isShaking, setIsShaking] = useState(false);
+
+  const handleClick = () => {
+    setIsShaking(true);
+
+    // Remove the shaking class after the animation ends (duration: 0.3s)
+    setTimeout(() => {
+      setIsShaking(false);
+    }, 300);
+  };
+
+  const ndaClass = isShaking && 'vibrating-text';
+
   const theme = useTheme();
   const mobileScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const handleImageClick = (url) => {
@@ -210,9 +137,16 @@ const Projects = ({ refs }) => {
   );
 
   return (
-    <Box ref={refs} className={classes.projectsSection}>
-      <Box className={classes.stickyProjectsTitleSection}>
-        <Box className={classes.projectsTitleSection}>
+    <ProjectsSection ref={refs}>
+      <Box sx={{
+        position: "sticky",
+        top: 0,
+        zIndex: 99,
+        background: "#fff",
+        marginBottom: "50px",
+        padding: "30px 0px 0px 0px",
+      }}>
+        <ProjectsTitleSection>
           <Box
             style={{
               gap: "10px",
@@ -227,9 +161,9 @@ const Projects = ({ refs }) => {
                 backgroundColor: "#CC5F70",
               }}
             ></Box>
-            <h2 style={{ fontFamily: "Alatsi, sans-serif" }}>Projects</h2>
+            <h2 style={{ fontFamily: "Alatsi, sans-serif" }}>Projects 💼</h2>
           </Box>
-        </Box>
+        </ProjectsTitleSection>
         <motion.div
           style={{ scaleX, transformOrigin: "right", background }}
           className="myprogressBar"
@@ -241,11 +175,13 @@ const Projects = ({ refs }) => {
       <WorkPortfolio
         handleImageClick={handleImageClick}
         mobileScreen={mobileScreen}
-        classes={classes}
+        // classes={classes}
         MyProjects={MyProjects}
+        handleClick={handleClick}
+        ndaClass={ndaClass}
       />
       {/* Content goes here */}
-    </Box>
+    </ProjectsSection>
   );
 };
 

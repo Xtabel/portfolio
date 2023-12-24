@@ -1,97 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Hearts from "../assets/hearts.png";
-import { makeStyles, useMediaQuery, useTheme } from "@material-ui/core";
-import profile3 from "../assets/profile3.jpg";
-import { motion, useInView } from "framer-motion";
 
-const useStyles = makeStyles((theme) => ({
-  aboutDiv: {
-    padding: "70px 30px 50px 30px",
-    width: "100%",
-    backgroundColor: "transparent",
-    maxWidth: "1440px",
-    margin: "auto",
-    borderBottom: "1px solid #1a1a1a",
-    [theme.breakpoints.down("xs")]: {
-      padding: "0px",
-      margin: "30px 0px",
-    },
-  },
-  aboutDivTitle: {
-    display: "flex",
-    justifyContent: "flex-end",
-    alignSelf: "flex-end",
-    marginBottom: "50px",
-  },
-  aboutText: {
-    gap: "10px",
-    display: "flex",
-    alignItems: "center",
-  },
-  aboutTextRibbon: {
-    width: "70px",
-    height: "10px",
-    backgroundColor: "#CC5F70",
-  },
-  aboutContentContainer: {
-    display: "flex",
-    width: "100%",
-    justifyContent: "space-evenly",
-    gap: "100px",
-    alignItems: "center",
-    [theme.breakpoints.down("xs")]: {
-      display: "block",
-    },
-  },
-  imageMobileDiv: {
-    display: "flex",
-    justifyContent: "center",
-    width: "100%",
-    margin: "30px 0px",
-  },
-  imageMobile: {
-    background: `url('${profile3}')`,
-    // backgroundColor: "pink",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center",
-    width: "200px",
-    height: "200px",
-    position: "relative",
-    "&::before": {
-      content: "'' !important",
-      position: "absolute !important",
-      top: "0 !important",
-      left: "0 !important",
-      borderWidth: "50px 50px 50px 50px !important",
-      borderStyle: "solid !important",
-      borderColor: "#CC5F70 transparent transparent #CC5F70 !important",
-      color: "#fff !important",
-    },
-    "&::after": {
-      content: "'' !important",
-      position: "absolute !important",
-      bottom: "0 !important",
-      right: "0 !important",
-      borderWidth: "50px 50px 50px 50px !important",
-      borderStyle: "solid !important",
-      borderColor: "transparent #CC5F70 #CC5F70 transparent !important",
-    },
-  },
-  aboutBackground: {
-    backgroundColor: "#FDFAFA",
-    [theme.breakpoints.down("xs")]: {
-      width: "100%",
-      overflowX: "hidden",
-    },
-  },
-}));
+import { motion, useInView } from "framer-motion";
+import { Box, useMediaQuery, useTheme } from "@mui/material";
+import "../styles/About.scss"
+
 const About = ({ refs }) => {
-  const classes = useStyles();
   const theme = useTheme();
-  // const ref = useRef()
   const isInView = useInView(refs, { margin: "-100px" });
-  const mobileScreen = useMediaQuery(theme.breakpoints.down("xs"));
+  const mobileScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const [mobiless, setMobiless] = useState(false);
   const mobilex = -100;
   const desktopx = -300;
@@ -121,26 +38,44 @@ const About = ({ refs }) => {
   return (
     <motion.div
       ref={refs}
-      className={classes.aboutDiv}
+      style={{
+        padding: mobileScreen ? "0px" : "70px 30px 50px 30px",
+        width: "100%",
+        backgroundColor: "transparent",
+        maxWidth: "1440px",
+        margin: mobileScreen ? "30px 0px" : "auto",
+        borderBottom: "1px solid #1a1a1a",
+      }}
       variants={variants}
       initial="initial"
       animate={isInView && "animate"}
     >
-      <motion.div className={classes.aboutDivTitle}>
-        <motion.div className={classes.aboutText}>
-          <motion.div className={classes.aboutTextRibbon}></motion.div>
+      <motion.div className="aboutDivTitle">
+        <motion.div className="aboutText">
+          <motion.div className="aboutTextRibbon"></motion.div>
           <motion.h2 style={{ fontFamily: "Alatsi, sans-serif" }}>
-            About
+            About 🔍
           </motion.h2>
         </motion.div>
       </motion.div>
-      <div className={classes.aboutBackground}>
+      <Box sx={{
+        backgroundColor: "#FDFAFA", ...(mobileScreen && {
+          width: "100%",
+          overflowX: "hidden",
+        })
+      }}>
         <img
           src={Hearts}
           alt="hearts"
           style={{ position: "absolute", zIndex: "999", marginRight: "-30px" }}
         />
-        <div className={classes.aboutContentContainer}>
+        <Box sx={{
+          display: "flex",
+          width: "100%",
+          justifyContent: "space-evenly",
+          gap: "100px",
+          alignItems: "center", ...(mobileScreen && { display: "block", })
+        }}>
           {!mobileScreen && (
             <div>
               <div className="img-thread">
@@ -164,25 +99,25 @@ const About = ({ refs }) => {
                 <motion.div className="tools-div">REACT JS</motion.div>
               </motion.div>
               <motion.div className="grid-item">
-                <motion.div className="tools-div">Figma</motion.div>
+                <motion.div className="tools-div">Redux</motion.div>
               </motion.div>
               <motion.div className="grid-item">
                 <motion.div className="tools-div">Material UI</motion.div>
               </motion.div>
               <motion.div className="grid-item">
-                <motion.div className="tools-div">SASS</motion.div>
+                <motion.div className="tools-div">React Native</motion.div>
               </motion.div>
               <motion.div className="grid-item">
-                <motion.div className="tools-div">Redux</motion.div>
+                <motion.div className="tools-div">SASS</motion.div>
               </motion.div>
               <motion.div className="grid-item">
                 <motion.div className="tools-div">TypeScript</motion.div>
               </motion.div>
               <motion.div className="grid-item">
-                <motion.div className="tools-div">Azure</motion.div>
+                <motion.div className="tools-div">Next JS</motion.div>
               </motion.div>
               <motion.div className="grid-item">
-                <motion.div className="tools-div">Next JS</motion.div>
+                <motion.div className="tools-div">Azure</motion.div>
               </motion.div>
               <motion.div className="grid-item">
                 <motion.div className="tools-div">Agile Methodology</motion.div>
@@ -192,16 +127,16 @@ const About = ({ refs }) => {
 
           {mobileScreen && (
             <motion.div
-              className={classes.imageMobileDiv}
+              className={"imageMobileDiv"}
               variants={variants}
               initial="initial"
               animate={isInView && "animate"}
             >
-              <motion.div className={classes.imageMobile}></motion.div>
+              <motion.div className="imageMobile"></motion.div>
             </motion.div>
           )}
-        </div>
-      </div>
+        </Box>
+      </Box>
     </motion.div>
   );
 };

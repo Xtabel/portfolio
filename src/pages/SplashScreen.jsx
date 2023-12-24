@@ -47,7 +47,7 @@ const SplashScreen = () => {
           style={{
             position: "absolute",
             fontFamily: "Sacramento, cursive",
-            fontSize: "24px",
+            fontSize: "28px",
             color: "#fff",
             opacity: nameDisplay ? 1 : 0,
           }}

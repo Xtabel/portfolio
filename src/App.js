@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./components/some.css";
-import { makeStyles } from "@material-ui/core/styles";
-import { createTheme, ThemeProvider } from "@material-ui/core/styles";
-import { CssBaseline } from "@material-ui/core";
+
 import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage";
 import ExperiencePage from "./pages/ExperiencePage";
@@ -10,6 +8,9 @@ import ProjectsPage from "./pages/ProjectsPage";
 import Footer from "./components/Footer";
 import SplashScreen from "./pages/SplashScreen";
 import Cursor from "./components/Cursor";
+import { Box, CssBaseline, ThemeProvider } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
+
 
 const theme = createTheme({
   palette: {
@@ -26,29 +27,15 @@ const theme = createTheme({
   },
 });
 
-const useStyles = makeStyles((theme) => ({
-  Container: {
-    height: "100%",
-    width: "100%",
-    padding: "0px 30px",
-    boxSizing: "border-box",
-    [theme.breakpoints.down("xs")]: {
-      padding: "0px 30px",
-      alignItems: "left",
-    },
-  },
-  innerContainer: {
-    height: "100%",
-  },
-}));
+
 
 function App() {
-  const classes = useStyles();
   const refs = {
+    homeRef: useRef(null),
     aboutRef: useRef(null),
     experienceRef: useRef(null),
     projectsRef: useRef(null),
-    contactRef: useRef(null), // Create a ref using useRef
+    contactRef: useRef(null),
   };
 
   const ScrollIntoView = (refId) => {
@@ -64,6 +51,15 @@ function App() {
       setLoading(false);
     }, [6000]);
   }, []);
+  const [hoverMedia, setHoverMedia] = useState(false);
+  const handleHoverMedia = (e) => {
+    debugger
+    if (e.type === "mouseover") {
+      setHoverMedia(true);
+    } else if (e.type === 'mouseleave') {
+      setHoverMedia(false)
+    }
+  }
   return (
     <ThemeProvider theme={theme}>
       {loading ? (
@@ -71,11 +67,17 @@ function App() {
       ) : (
         <div className="animationNowFades" style={{ height: "100%" }}>
           <CssBaseline />
-          <Cursor/>
-          <div className={classes.Container}>
-            <div className={classes.innerContainer}>
+          <Cursor />
+          <Box sx={{
+            height: "100%",
+            width: "100%",
+            padding: "0px 30px",
+            boxSizing: "border-box",
+            alignItems: { xs: 'left' }
+          }}>
+            <div style={{ height: "100%", }}>
               <section>
-                <HomePage ScrollIntoView={ScrollIntoView} />
+                <HomePage refs={refs.homeRef} ScrollIntoView={ScrollIntoView} handleHoverMedia={handleHoverMedia} />
               </section>
               <section>
                 <AboutPage refs={refs.aboutRef} />
@@ -87,10 +89,10 @@ function App() {
                 <ProjectsPage refs={refs.projectsRef} />
               </section>
               <section>
-                <Footer refs={refs.contactRef} />
+                <Footer refs={refs.contactRef} ScrollIntoView={ScrollIntoView} hoverMedia={hoverMedia} />
               </section>
             </div>
-          </div>
+          </Box>
         </div>
       )}
     </ThemeProvider>

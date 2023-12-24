@@ -1,21 +1,106 @@
-import { Box, Icon, Tooltip } from "@material-ui/core";
+
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import MobileContent from "./MobileContent";
 import FeaturedProjectRectangle from "./FeaturedProjectRectangle";
+import { Box, Tooltip, styled } from "@mui/material";
+import { Icon } from "@iconify/react";
 
 const WorkPortfolio = ({
   classes,
   mobileScreen,
   handleImageClick,
   MyProjects,
+  handleClick,
+  ndaClass
 }) => {
   const ref = useRef();
   // const { scrollYProgress } = useScroll({ target: ref });
   // const y = useTransform(scrollYProgress, [0, 1], [-300, 300]);
 
+  const MyProjectsSection = styled(Box)(({ theme }) => ({
+    backgroundColor: "#FDFAFA",
+    height: "fit-content",
+    display: "flex",
+    flexDirection: "column",
+    gap: "100px",
+    padding: "30px",
+    [theme.breakpoints.down("md")]: {
+      padding: "0px",
+      gap: "50px",
+    },
+  }));
+
+  const ProjectImage = styled("img")(({ theme }) => ({
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    boxShadow: "0px 1px 4px 1px rgba(178, 178, 178, 0.25)",
+    borderRadius: "10px",
+    cursor: "pointer",
+    transition: "transform 0.3s ease-in-out",
+    background: "none",
+    [theme.breakpoints.only("md")]: {
+      width: "100%",
+      height: "100%",
+      objectFit: "cover",
+    },
+    [theme.breakpoints.only("lg")]: {
+      // background:'#fff',
+    },
+  }));
+  const leftRectangularBlock = {
+    width: "80%",
+    height: "100%",
+    textAlign: "left",
+    padding: "30px 0px",
+    zIndex: "3",
+    position: "relative",
+    marginRight: "-70px",
+  }
+  const displaySection = {
+    display: "none",
+    height: 0,
+  }
+
+
+  const rightRectangularBlock = {
+    width: "80%",
+    height: "100%",
+    /*  backgroundColor:'red', */ textAlign: "right",
+    padding: "30px 0px",
+    zIndex: "3",
+    position: "relative",
+    marginLeft: "-70px",
+  }
+  const featuredProjectRectangle = {
+    width: "100%",
+    boxShadow: "rgb(144 144 144) 0px 10px 30px -15px",
+    backgroundColor: "#CC5F70",
+    padding: "30px",
+    borderRadius: "5px",
+    marginBottom: "20px",
+  };
+  const linkBtn = {
+    cursor: "pointer",
+    "&:hover": {
+      color: "#CC5F70 !important",
+    },
+  }
+  const listStyle = {
+    display: "flex",
+    justifyContent: "start",
+    gap: "10px",
+    listStyle: "none",
+    flexWrap: "wrap",
+  }
+  const combinedStyles = {
+    ...linkBtn,
+    color: '#212020',
+  };
+
   return (
-    <Box className={classes.myProjectsSection}>
+    <MyProjectsSection>
       {/* new section */}
       {MyProjects?.map((item) => (
         <div key={item?.id} ref={ref}>
@@ -23,25 +108,32 @@ const WorkPortfolio = ({
             <div key={item?.id} style={{ display: "flex", height: "350px" }}>
               <motion.div
                 // style={{y}}
-                className={
+                style={
                   !mobileScreen
-                    ? classes.leftRectangularBlock
-                    : classes.displaySection
+                    ? leftRectangularBlock
+                    : displaySection
                 }
               >
-                <FeaturedProjectRectangle item={item} classes={classes} />
+                <FeaturedProjectRectangle item={item} style1={featuredProjectRectangle} style2={listStyle} style3={combinedStyles} ndaClass={ndaClass} />
               </motion.div>
               <div
                 className={
                   !mobileScreen ? "image-container" : "image-container-mobile"
                 }
-                onClick={() => handleImageClick(item?.link)}
+                onClick={() => {
+                  if (item?.link) {
+                    handleImageClick(item?.link)
+                  } else {
+                    handleClick()
+                  }
+                }}
               >
                 {mobileScreen && <MobileContent content={item} />}
-                <img
+                <ProjectImage
                   src={item?.image}
                   alt={`${item?.name}`}
-                  className={classes.projectImage}
+                  draggable={false}
+                // className={classes.projectImage}
                 />
               </div>
             </div>
@@ -51,27 +143,35 @@ const WorkPortfolio = ({
                 className={
                   !mobileScreen ? "image-container" : "image-container-mobile"
                 }
-                onClick={() => handleImageClick(item?.link)}
+                onClick={() => {
+                  if (item?.link) {
+                    handleImageClick(item?.link)
+                  }
+                  else {
+                    handleClick()
+                  }
+                }}
               >
                 {mobileScreen && <MobileContent content={item} />}
-                <img
+                <ProjectImage
                   src={item?.image}
                   alt={`${item?.name}`}
-                  className={classes.projectImage}
+                  draggable={false}
+                // className={classes.projectImage}
                 />
               </div>
               <div
-                className={
+                style={
                   !mobileScreen
-                    ? classes.rightRectangularBlock
-                    : classes.displaySection
+                    ? rightRectangularBlock
+                    : displaySection
                 }
               >
                 <h4 style={{ marginBottom: "6px", color: "#CC5F70" }}>
                   Featured Project
                 </h4>
                 <h2 style={{ marginBottom: "20px" }}>{item?.name}</h2>
-                <div className={classes.featuredProjectRectangle}>
+                <div style={featuredProjectRectangle}>
                   <p style={{ fontStyle: "18px", color: "#fff" }}>
                     {item?.subTitle}
                   </p>
@@ -92,19 +192,16 @@ const WorkPortfolio = ({
                   </Box>
                 </Box>
                 <Box style={{ padding: "20px 0px" }}>
-                  <Tooltip title="Visit site" color="red">
-                    <a
-                      href={item?.link}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      <Icon
-                        icon="quill:link-out"
-                        width={"30px"}
-                        height={"30px"}
-                        color="#212020"
-                        className={classes.linkBtn}
-                      />
+                  <Tooltip title={item?.link && "Visit site"}>
+                    <a href={item?.link} rel="noopener noreferrer" target="_blank" style={{ color: ndaClass ? "black" : "grey" }}>
+                      {!item?.link ? <span className={ndaClass.toString()} style={{ display: 'flex', justifyContent: 'end', alignItems: 'end' }}> <Icon icon="uim:padlock" style={combinedStyles} width={"30px"}
+                        height={"30px"} /> NDA bound</span> :
+                        <Icon
+                          icon="quill:link-out"
+                          width={"30px"}
+                          height={"30px"}
+                          style={combinedStyles}
+                        />}
                     </a>
                   </Tooltip>
                 </Box>
@@ -113,7 +210,7 @@ const WorkPortfolio = ({
           )}
         </div>
       ))}
-    </Box>
+    </MyProjectsSection>
   );
 };
 

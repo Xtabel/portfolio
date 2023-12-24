@@ -1,7 +1,8 @@
-import { Box } from "@material-ui/core";
+
 import React from "react";
 import "./some.css";
 import { motion } from "framer-motion";
+import { Box } from "@mui/material";
 
 const NavMenu = ({ showMenu, closeMenu }) => {
   const menuStyle = {

@@ -1,6 +1,7 @@
 import React from "react";
-import { Box } from "@material-ui/core";
+
 import Hamburger from "hamburger-react";
+import { Box } from "@mui/material";
 
 const Menu = ({ showMenu, handleShowMenu }) => {
   return (

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useMediaQuery, useTheme } from "@material-ui/core";
+
 import "./cursor.css";
 import { motion } from "framer-motion";
+import { useMediaQuery, useTheme } from "@mui/material";
 const Cursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const theme = useTheme();
