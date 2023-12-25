@@ -69,8 +69,8 @@ const theme = createTheme({
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
-    const muiTheme = useTheme();
-    const mobileScreen = useMediaQuery(muiTheme.breakpoints.down("sm"));
+    // const muiTheme = useTheme();
+    // const mobileScreen = useMediaQuery(muiTheme.breakpoints.down("sm"));
 
     return (
         <div

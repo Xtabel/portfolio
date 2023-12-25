@@ -18,7 +18,7 @@ const titleContent = {
 const textContentDiv = {
   padding: "25px 0px",
 }
-const content = {
+const contentStyle = {
   fontSize: "14px",
   fontWeight: 400,
   color: "#acacac",
@@ -43,7 +43,7 @@ const MobileContent = ({ content }) => {
       <p style={titleHeader}>Featured Project</p>
       <h3 style={titleContent}>{content?.name}</h3>
       <div style={textContentDiv}>
-        <p style={content}>
+        <p style={contentStyle}>
           {content?.subTitle.length > 150
             ? content.subTitle.slice(0, -100) + "..."
             : content?.subTitle}

@@ -24,13 +24,13 @@ const Header = ({ handleClick, refs, hoverMedia }) => {
     handleClick(ref);
     document.body.style = "overflow: auto";
   };
-  const viewUXPortfolioHandler = () => {
-    window.open(
-      "https://linky.design/ChristabelAkpo-Portfolio",
-      "_blank",
-      "noopener,noreferrer"
-    );
-  };
+  // const viewUXPortfolioHandler = () => {
+  //   window.open(
+  //     "https://linky.design/ChristabelAkpo-Portfolio",
+  //     "_blank",
+  //     "noopener,noreferrer"
+  //   );
+  // };
 
   const navLinks = [
     {
