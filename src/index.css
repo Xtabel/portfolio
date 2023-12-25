@@ -16,6 +16,10 @@ body {
 }
 
 body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -24,14 +28,30 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: url('./assets/homebg.png') !important;
   background-size: cover !important;
-  /* background-position: center; */
+  z-index: 2;
   background-repeat: no-repeat !important;
-  /* background-color: red; */
-  /* z-index: 1, */
   width: 100%;
   height: 100vh;
   overflow-x: hidden;
+
+  background-position: center;
 }
+
+
+/* body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('./assets/homebg.png') !important;
+  background-size: cover !important;
+  z-index: 2;
+  background-repeat: no-repeat !important;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  background-attachment: fixed;
+} */
 
 ::-webkit-scrollbar {
   width: 5px;
@@ -70,6 +90,8 @@ code {
 
 div#root {
   height: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .bottom-links:hover {
