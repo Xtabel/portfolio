@@ -148,7 +148,7 @@ const Header = ({ handleClick, refs, hoverMedia }) => {
                 disableElevation
                 color="primary"
                 className={"primaryActionButton"}
-                onClick={viewUXPortfolioHandler}
+                // onClick={viewUXPortfolioHandler}
               // href="https://linky.design/ChristabelAkpo-Portfolio"
               >
                 View UX Portfolio
