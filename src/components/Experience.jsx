@@ -3,14 +3,24 @@ import VerticalTabs from "./Tabs";
 import "./some.css";
 import { useInView, motion } from "framer-motion";
 import "../styles/Experience.scss"
+import { useMediaQuery, useTheme } from "@mui/material";
+
 
 const Experience = ({ refs }) => {
+  const theme = useTheme();
   const isInView = useInView(refs, { margin: "-100px" });
+  const isInViewMobile = useInView(refs, { margin: "-10px" });
+  const mobile = useMediaQuery(theme.breakpoints.down("sm")); 
+
   const variants = {
     initial: {
       x: 500,
       // y:100,
       opacity: 0,
+    },
+    initialMobile:{
+      x:20,
+      opacity:0,
     },
     animate: {
       x: 0,
@@ -28,8 +38,8 @@ const Experience = ({ refs }) => {
       ref={refs}
       className={"experienceDiv"}
       variants={variants}
-      initial="initial"
-      animate={isInView && "animate"}
+      initial={mobile?"initialMobile":"initial"}
+      animate={!mobile?(isInView && "animate"):(isInViewMobile && "animate")}
       exit={{
         x: 500,
         y: 100,
