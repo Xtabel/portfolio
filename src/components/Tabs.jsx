@@ -11,21 +11,21 @@ const myRoles = [
         company: 'Sidmach Technologies Nigeria Limited',
         jobTitle: 'Software Engineer and Lead Product Designer',
         period: 'April 2021 - Present',
-        roles: ['Led the product design team and worked as a front-end engineer to develop an e-Study application to serve students preparing for the WASSCE examinations in West Africa.', ' Developed Admin portal for the NYSC SAED Headquarters Department using React JS and Material UI, and consumed API for the portal. Used React- Redux to manage the state of the application.', ' Designed and developed a website for a skilling initiative with PayStack Integration in partnership with Microsoft which served more than 300 applicants.', ' Worked in a diverse agile team of software developers, designers and software analysts on delivering a digital solution for an HMO client that serves over 2000 users.']
+        roles: ['Led the product design team and worked as a front-end engineer to develop an e-Study application to serve students preparing for the WASSCE examinations in West Africa.', ' Developed Admin portal for the NYSC SAED Headquarters Department using React JS and Material UI, and consumed API for the portal. Used React- Redux to manage the state of the application.', ' Designed and developed a website for a skilling initiative with PayStack Integration in partnership with Microsoft which served more than 300 applicants.', ' Worked in a diverse agile team of software developers, designers and software analysts on delivering a digital solution for an HMO client to serve over 2000 users.']
     },
     {
         id: 2,
         company: 'Buy Provisions NG',
-        jobTitle: 'Product Designer & Graphics Designer',
+        jobTitle: 'Lead Digital Designer',
         period: 'December 2020- March 2021',
-        roles: [' Recognized for delivering impactful designs tailored to social media marketing campaigns, receiving commendations and recommendations for creating visually compelling assets that enhance brand engagement and user interaction.', 'Led content creation initiatives, collaborating closely with a team of digital marketers to strategically advertise products to our target market. This involved not only creating compelling visuals but also ensuring seamless integration and functionality across various digital platforms, fostering an intuitive user experience.']
+        roles: ['Recognized for delivering impactful designs tailored to social media marketing campaigns, earning commendations and recommendations for creating visually compelling assets that boost brand engagement and user interaction.', 'Led content creation initiatives, collaborating closely with a team of digital marketers to strategically advertise products to our target market. This involved creating compelling visuals and ensuring seamless integration and functionality across various digital platforms, fostering an intuitive user experience for users.']
     },
     {
         id: 3,
         company: 'New Horizons Nigeria Limited',
-        jobTitle: 'Website Designer & Graphics Designer Intern',
+        jobTitle: 'Digital Designer & Web designer Intern',
         period: 'January 2019- September 2019',
-        roles: ["Developed and designed monthly email templates, ensuring consistent and visually appealing communication with clients and stakeholders.", "Designed and crafted website templates, contributing to the enhancement of the company's online platform, focusing on user-friendly interfaces and engaging user experiences.", "Produced impactful posters for company advertisements, employing strategic visual elements to effectively promote products and services.","Efficiently managed database and certificate administration for customers during internship tenure."]
+        roles: ["Developed and designed monthly email templates, ensuring consistent and visually appealing communication with clients and stakeholders using HTML, CSS, Adobe photoshop and Adobe Indesign", "Designed and crafted website templates, contributing to the enhancement of the company's online platform, focusing on user-friendly interfaces and engaging user experiences.", "Produced impactful posters for company advertisements, employing strategic visual elements to effectively promote products and services.","Efficiently managed database and certificate administration for customers during internship tenure."]
     }
 ]
 const theme = createTheme({

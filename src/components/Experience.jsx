@@ -10,7 +10,7 @@ const Experience = ({ refs }) => {
   const theme = useTheme();
   const isInView = useInView(refs, { margin: "-100px" });
   const isInViewMobile = useInView(refs, { margin: "-10px" });
-  const mobile = useMediaQuery(theme.breakpoints.down("sm")); 
+  const mobile = useMediaQuery(theme.breakpoints.down("md")); 
 
   const variants = {
     initial: {

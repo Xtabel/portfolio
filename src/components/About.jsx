@@ -105,16 +105,16 @@ const About = ({ refs }) => {
                 <motion.div className="tools-div">Material UI</motion.div>
               </motion.div>
               <motion.div className="grid-item">
-                <motion.div className="tools-div">React Native</motion.div>
+                <motion.div className="tools-div">Ant Design</motion.div>
               </motion.div>
               <motion.div className="grid-item">
                 <motion.div className="tools-div">SASS</motion.div>
               </motion.div>
               <motion.div className="grid-item">
-                <motion.div className="tools-div">TypeScript</motion.div>
+                <motion.div className="tools-div">Styled Components</motion.div>
               </motion.div>
               <motion.div className="grid-item">
-                <motion.div className="tools-div">Next JS</motion.div>
+                <motion.div className="tools-div">RTK Query</motion.div>
               </motion.div>
               <motion.div className="grid-item">
                 <motion.div className="tools-div">Azure</motion.div>

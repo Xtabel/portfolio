@@ -4,7 +4,10 @@
 .containerBox {
   align-content: flex-start;
   overflow-x: hidden;
-
+  // background-image: url('../assets/homebg.png') !important;
+  // background-size: cover !important;
+  // background-repeat: no-repeat !important;
+  // z-index: 2; 
   /* React: .header */
   .header {
     padding: 30px;

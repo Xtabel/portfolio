@@ -24,13 +24,14 @@ const Header = ({ handleClick, refs, hoverMedia }) => {
     handleClick(ref);
     document.body.style = "overflow: auto";
   };
-  // const viewUXPortfolioHandler = () => {
-  //   window.open(
-  //     "https://linky.design/ChristabelAkpo-Portfolio",
-  //     "_blank",
-  //     "noopener,noreferrer"
-  //   );
-  // };
+  const viewUXPortfolioHandler = () => {
+    window.open(
+      "https://uxfol.io/b14dec0a",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+  
 
   const navLinks = [
     {
@@ -139,7 +140,7 @@ const Header = ({ handleClick, refs, hoverMedia }) => {
               <motion.p variants={textVariants} className={"jobtools"}>
                 {/* I work with HTML, CSS , React JS, Adobe Photoshop, Adobe
                 Illustrator, Adobe Indesign and Figma. */}
-                I work with React JS, Material UI, Redux, Next JS
+                I work with React JS, Material UI, Redux,
                 and currently exploring React Native.
 
               </motion.p>
@@ -148,7 +149,7 @@ const Header = ({ handleClick, refs, hoverMedia }) => {
                 disableElevation
                 color="primary"
                 className={"primaryActionButton"}
-                // onClick={viewUXPortfolioHandler}
+                onClick={viewUXPortfolioHandler}
               // href="https://linky.design/ChristabelAkpo-Portfolio"
               >
                 View UX Portfolio
