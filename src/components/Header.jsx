@@ -26,7 +26,7 @@ const Header = ({ handleClick, refs, hoverMedia }) => {
   };
   const viewUXPortfolioHandler = () => {
     window.open(
-      "https://uxfol.io/b14dec0a",
+      "https://christabelakpo.netlify.app/",
       "_blank",
       "noopener,noreferrer"
     );

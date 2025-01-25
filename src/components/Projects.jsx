@@ -31,7 +31,7 @@ const MyProjects = [
       "GSAP",
     ],
     image: Project6,
-    link: "https://estudy.ng/",
+    link: "https://christabelakpo.netlify.app/",
     // link: null,
   },
   {
