@@ -11,21 +11,35 @@ const myRoles = [
         company: 'Sidmach Technologies Nigeria Limited',
         jobTitle: 'Software Engineer and Lead Product Designer',
         period: 'April 2021 - Present',
-        roles: ['Led the product design team and worked as a front-end engineer to develop an e-Study application to serve students preparing for the WASSCE examinations in West Africa.', ' Developed Admin portal for the NYSC SAED Headquarters Department using React JS and Material UI, and consumed API for the portal. Used React- Redux to manage the state of the application.', ' Designed and developed a website for a skilling initiative with PayStack Integration in partnership with Microsoft which served more than 300 applicants.', ' Worked in a diverse agile team of software developers, designers and software analysts on delivering a digital solution for an HMO client to serve over 2000 users.']
+        roles: ['Collaborated on the front-end development of the WAEC e-Study platform, while leading the UI/UX design and implementing gamification features, resulting in a 40% increase in student engagement and improved preparation effectiveness.', ' Developed Admin portal for the NYSC SAED Headquarters Department using React JS and Material UI. Used React- Redux to manage the state of the application.', ' Developed a scalable web application for the Microsoft Future Ready Program using React JS, Material UI, and Paystack, enabling seamless resource access for 300+ applicants and achieving 99% user satisfaction.', 'Built reusable component libraries and optimized API integrations, cutting front-end development time by 30% while improving UI consistency and real-time data performance by 25%.']
     },
     {
         id: 2,
-        company: 'Buy Provisions NG',
-        jobTitle: 'Lead Digital Designer',
-        period: 'December 2020- March 2021',
-        roles: ['Recognized for delivering impactful designs tailored to social media marketing campaigns, earning commendations and recommendations for creating visually compelling assets that boost brand engagement and user interaction.', 'Led content creation initiatives, collaborating closely with a team of digital marketers to strategically advertise products to our target market. This involved creating compelling visuals and ensuring seamless integration and functionality across various digital platforms, fostering an intuitive user experience for users.']
+        company: 'Danval Technologies',
+        jobTitle: 'Front-end Engineer and Lead Product Designer (Remote) ',
+        period: 'March 2024 - Present',
+        roles: ['Led the design and implementation of an automated queue management system, resulting in an 80% reduction in customer wait times.', 'Streamlined customer onboarding with OAuth integration, cutting registration time and enhancing security', 'Architected and implemented dynamic user roles and permission management systems, creating intuitive front-end components for seamless role-based access control.', 'Collaborated with cross-functional teams to translate complex requirements into scalable, user-centric interfaces.']
     },
     {
         id: 3,
+        company: 'Fortuna Inc.',
+        jobTitle: 'Lead Front-end Engineer',
+        period: 'January 2024  - June 2024 (contract)',
+        roles: ['Spearheaded project setup and front-end development of design systems, creating reusable components, metrics dashboards, subscription planning features, and settings management interfaces.', 'Ensured seamless functionality through robust API integration and adherence to best practices.', 'Implemented real-time features using WebSockets, enabling instant updates and notifications to enhance user engagement and system responsiveness.']
+    },
+    {
+        id: 4,
+        company: 'Buy Provisions NG',
+        jobTitle: 'Product Lead',
+        period: 'December 2020 - March 2021',
+        roles: ['Designed and implemented visually engaging and responsive digital interfaces that enhanced user experience', 'Led content creation initiatives, collaborating closely with a team of digital marketers to strategically advertise products to our target market. This involved creating compelling visuals and ensuring seamless integration and functionality across various digital platforms, fostering an intuitive user experience for users.']
+    },
+    {
+        id: 5,
         company: 'New Horizons Nigeria Limited',
-        jobTitle: 'Digital Designer & Web designer Intern',
-        period: 'January 2019- September 2019',
-        roles: ["Developed and designed monthly email templates, ensuring consistent and visually appealing communication with clients and stakeholders using HTML, CSS, Adobe photoshop and Adobe Indesign", "Designed and crafted website templates, contributing to the enhancement of the company's online platform, focusing on user-friendly interfaces and engaging user experiences.", "Produced impactful posters for company advertisements, employing strategic visual elements to effectively promote products and services.","Efficiently managed database and certificate administration for customers during internship tenure."]
+        jobTitle: 'Front-end Engineer Intern',
+        period: 'January 2019 - September 2019',
+        roles: ["Contributed to the design and implementation of interactive and user-friendly web interfaces, enhancing company communication platforms", "Efficiently managed database and certificate administration for customers during internship tenure."]
     }
 ]
 const theme = createTheme({
@@ -148,6 +162,8 @@ const VerticalTabs = () => {
                     }}
                 >
                     <Tab label="Sidmach Technologies Nigeria Limited" {...a11yProps(0)} wrapped sx={{ ...mobileScreen && { width: '60%' } }} />
+                    <Tab label="Danval Technologies" {...a11yProps(2)} wrapped sx={{ ...mobileScreen && { width: '60%' } }} />
+                    <Tab label="Fortuna Inc." {...a11yProps(2)} wrapped sx={{ ...mobileScreen && { width: '60%' } }} />
                     <Tab label="Buy Provisions NG" {...a11yProps(1)} wrapped sx={{ ...mobileScreen && { width: '60%' } }} />
                     <Tab label="New Horizon System Solution Limited" {...a11yProps(2)} wrapped sx={{ ...mobileScreen && { width: '60%' } }} />
                 </Tabs>

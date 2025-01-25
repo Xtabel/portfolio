@@ -1,9 +1,12 @@
 
 import Project1 from "../assets/placeholderimg.png";
 import Project2 from "../assets/placeholderimg2.png";
-import Project3 from "../assets/placeholderimg3.png";
+// import Project3 from "../assets/placeholderimg3.png";
 import Project4 from "../assets/placeholderimg4.png";
 import Project5 from "../assets/placeholderimg5.png";
+import Project6 from "../assets/placeholderimg6.png";
+// import Project7 from "../assets/placeholderimg7.png";
+import Project8 from "../assets/placeholderimg8.png";
 import "./projectstyles.css";
 import {
   useScroll,
@@ -18,7 +21,37 @@ import { useState } from "react";
 const MyProjects = [
   {
     id: 1,
-    name: "WAEC Study Hub",
+    name: "UX Portfolio (v2)",
+    subTitle:
+      "My most recent ux portfolio showcasing my design process and projects.",
+    technologies: [
+      "Next JS",
+      "Shadcn UI",
+      "Tailwind CSS",
+      "GSAP",
+    ],
+    image: Project6,
+    link: "https://estudy.ng/",
+    // link: null,
+  },
+  {
+    id: 2,
+    name: "HCMS",
+    subTitle:
+      "A dashboard template for Human Capital Management System.",
+    technologies: [
+      "React JS",
+      "Material UI",
+      "RTK Query",
+      "Typescript"
+    ],
+    image: Project8,
+    link: "https://hcmsapplication.netlify.app/dashboard",
+    // link: null,
+  },
+  {
+    id: 3,
+    name: "WAEC eStudy",
     subTitle:
       "A gamified e-Study application that offers the official WAEC study and test materials to equip students in West Africa for the WASSCE/GCE exams.",
     technologies: [
@@ -29,23 +62,15 @@ const MyProjects = [
       "Tailwind CSS",
     ],
     image: Project5,
-    // link: "https://estudyapp.azurewebsites.net/",
+    link: "https://estudy.ng/",
     // link: null,
   },
+  
   {
-    id: 2,
-    name: "NYSC SAED Website",
-    subTitle:
-      "A web application that automates the process of the NYSC Skill Acquisition and Entrepreneurship Department in Nigeria.",
-    technologies: ["React JS", "MUI", "GSAP", "SASS", "Redux Saga"],
-    image: Project1,
-    link: "https://saed.nysc.org.ng/",
-  },
-  {
-    id: 3,
+    id: 4,
     name: "JM Tech Website",
     subTitle:
-      "A web application that offers IT training to African youths in partnership with Microsoft initiative.",
+    "A web application that offers IT training to African youths in partnership with Microsoft initiative.",
     technologies: [
       "React JS",
       "Material UI",
@@ -56,7 +81,16 @@ const MyProjects = [
     link: "https://jmtechcenter.org/",
   },
   {
-    id: 4,
+    id: 5,
+    name: "NYSC SAED Website",
+    subTitle:
+      "A web application that automates the process of the NYSC Skill Acquisition and Entrepreneurship Department in Nigeria.",
+    technologies: ["React JS", "MUI", "GSAP", "SASS", "Redux Saga"],
+    image: Project1,
+    link: "https://saed.nysc.org.ng/",
+  },
+  {
+    id: 6,
     name: "WAEC e-Registration Management Module",
     subTitle:
       "A management module for WAEC e-Registration admin management.  The web application handles all administrative operations involved in the WASSCE examination in West Africa.",
@@ -69,18 +103,18 @@ const MyProjects = [
       "Redux Persist",
     ],
     image: Project4,
-    // link: "https://waece-regmgtmodule.azurewebsites.net/",
+    link: "https://waece-regmgtmodule.azurewebsites.net/",
     // link: "#/",
   },
-  {
-    id: 5,
-    name: "Careplus HMO",
-    subTitle:
-      "A multi-tenant HMO custom web and mobile solution providing the best means of handling all HMO operations.",
-    technologies: ["React JS", "Material UI", "SASS", "Redux Saga"],
-    image: Project3,
-    link: "http://cplusportal.azurewebsites.net/",
-  },
+  // {
+  //   id: 5,
+  //   name: "Careplus HMO",
+  //   subTitle:
+  //     "A multi-tenant HMO custom web and mobile solution providing the best means of handling all HMO operations.",
+  //   technologies: ["React JS", "Material UI", "SASS", "Redux Saga"],
+  //   image: Project3,
+  //   link: "http://cplusportal.azurewebsites.net/",
+  // },
 ];
 
 const ProjectsSection = styled(Box)(({ theme }) => ({

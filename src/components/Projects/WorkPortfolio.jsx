@@ -75,8 +75,9 @@ const WorkPortfolio = ({
   }
   const featuredProjectRectangle = {
     width: "100%",
-    boxShadow: "rgb(144 144 144) 0px 10px 30px -15px",
+    // boxShadow: "rgb(144 144 144) 0px 10px 30px -15px",
     backgroundColor: "#CC5F70",
+    // backgroundColor: "#3E3E3E",
     padding: "30px",
     borderRadius: "5px",
     marginBottom: "20px",

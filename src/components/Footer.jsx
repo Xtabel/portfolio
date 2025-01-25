@@ -33,8 +33,8 @@ const Footer = ({ refs, ScrollIntoView, hoverMedia }) => {
         justifyContent: "flex-start",
         alignSelf: "flex-start",
         marginBottom: "20px",
-        [theme.breakpoints.down("sm")]:{
-          flexDirection:'column'
+        [theme.breakpoints.down("sm")]: {
+          flexDirection: 'column'
         }
       }} >
         <div
@@ -63,7 +63,7 @@ const Footer = ({ refs, ScrollIntoView, hoverMedia }) => {
             marginBottom: '80px',
             flexWrap: 'wrap',
             gap: '60px',
-         
+
           }}
           ref={refs}
         >
@@ -74,10 +74,10 @@ const Footer = ({ refs, ScrollIntoView, hoverMedia }) => {
               padding: "0px",
               flex: 1,
               textAlign: 'justify',
-      
+
             },
           }}>
-            I'm excited to hear about your project ideas or answer any questions you might have. Whether it's a collaboration, a project inquiry, or just to say hello, feel free to reach out via email by clicking the button below. Looking forward to connecting!
+            I’d love to hear about your project ideas or answer any questions you have. Whether it's a potential collaboration, a project inquiry, or just a friendly hello, don’t hesitate to reach out. Click the button below to send me an email – I’m looking forward to connecting!
             <div
               style={{
                 display: "flex",
@@ -129,7 +129,7 @@ const Footer = ({ refs, ScrollIntoView, hoverMedia }) => {
           {" "}
           <Box sx={{ width: '100%', height: '50px', display: { lg: 'flex', xs: 'none' }, alignItems: 'center', justifyContent: 'space-between', boxSizing: 'border-box', position: 'relative', bottom: 0, flexWrap: 'wrap' }}>
             <Typography color="secondary" style={{ fontWeight: 500 }}>
-              © Christabel Akpoguma (2021)
+              © Christabel Akpoguma (2025)
             </Typography>
             <ul style={{ display: 'flex', listStyle: 'none', width: '40%', justifyContent: 'space-evenly', flexWrap: 'wrap', color: "#979797", cursor: 'pointer' }}>
               <li onClick={() => ScrollIntoView('aboutRef')} className="bottom-links">About</li>

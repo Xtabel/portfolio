@@ -84,13 +84,13 @@ const About = ({ refs }) => {
             </div>
           )}
           <motion.div style={{ paddingTop: "50px", fontSize: "16px" }}>
-            Hi, I am a Front-end Engineer and a UI/UX Designer with a Graphic
+            Hi, I’m a Front-end Engineer and Product Designer with a passion
             <br />
-            Design background. As a creative, I love exploring new technologies
+            for crafting innovative, user-centered products. I enjoy exploring new
             <br />
-            and tools to create delightful products outside the box. I love
+            technologies and tools to create solutions that are both functional and delightful.
             <br />
-            interacting with creative minds to build software products. <br />
+            Collaborating with creative minds to bring software ideas to life is what drives me. <br />
             <motion.p style={{ marginTop: "30px", marginBottom: "20px" }}>
               Technologies I use:
             </motion.p>
@@ -99,7 +99,10 @@ const About = ({ refs }) => {
                 <motion.div className="tools-div">REACT JS</motion.div>
               </motion.div>
               <motion.div className="grid-item">
-                <motion.div className="tools-div">Redux</motion.div>
+                <motion.div className="tools-div">Next JS</motion.div>
+              </motion.div>
+              <motion.div className="grid-item">
+                <motion.div className="tools-div">Redux Toolkit</motion.div>
               </motion.div>
               <motion.div className="grid-item">
                 <motion.div className="tools-div">Material UI</motion.div>
@@ -111,16 +114,13 @@ const About = ({ refs }) => {
                 <motion.div className="tools-div">SASS</motion.div>
               </motion.div>
               <motion.div className="grid-item">
-                <motion.div className="tools-div">Styled Components</motion.div>
+                <motion.div className="tools-div">Typescript</motion.div>
               </motion.div>
               <motion.div className="grid-item">
-                <motion.div className="tools-div">RTK Query</motion.div>
+                <motion.div className="tools-div">GSAP</motion.div>
               </motion.div>
               <motion.div className="grid-item">
                 <motion.div className="tools-div">Azure</motion.div>
-              </motion.div>
-              <motion.div className="grid-item">
-                <motion.div className="tools-div">Agile Methodology</motion.div>
               </motion.div>
             </motion.div>
           </motion.div>

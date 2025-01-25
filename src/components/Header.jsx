@@ -140,8 +140,8 @@ const Header = ({ handleClick, refs, hoverMedia }) => {
               <motion.p variants={textVariants} className={"jobtools"}>
                 {/* I work with HTML, CSS , React JS, Adobe Photoshop, Adobe
                 Illustrator, Adobe Indesign and Figma. */}
-                I work with React JS, Material UI, Redux,
-                and currently exploring React Native.
+                I work with React JS, Next JS, Material UI, Redux,
+                and React Native.
 
               </motion.p>
               <Button

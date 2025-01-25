@@ -23,7 +23,7 @@ const FeaturedProjectRectangle = ({ item, style1, style2, style3, ndaClass }) =>
           </ul>
         </Box>
       ) : (
-        <Box style={{ fontStyle: "13px" }}>
+        <Box style={{ fontStyle: "13px", }}>
           <Box
             style={{
               display: "flex",
